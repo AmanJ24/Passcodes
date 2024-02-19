@@ -1,0 +1,154 @@
+bandit.labs.overthewire.org
+port - 2220
+bandit0
+
+
+*Level 1*  
+WAY - Using ls
+passwd - NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+
+*level 2* 
+WAY - Using cat ./-
+passwd - rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+*Level 3*
+WAY - using "" for spaced names
+passwd - aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+
+*Level 4*
+Way - using ls -a for hidden files
+passwd - 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+
+*Level 5*
+Way - just open and look for the readable one
+passwd - lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+*Level 6*
+WAY - use ls -la [Folder_name] and check for the specified size 
+passwd - P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+*Level 7*
+Way - find / -user bandit7 -group bandit6 -size 33c 2>&1 | grep -F -v Permission | grep -F -v directory
+Passwd - z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+
+*Level 8*
+way - grep -w "millionth" data.txt
+passwd - TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+
+*Level 9* 
+way - sort data.txt | uniq -u
+passwd - EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+
+*Level 10*
+way - cat data.txt | strings | grep ^=
+passwd - G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+
+*Level 11*
+way - base64 --decode data.txt 
+passwd - 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+*Level 12* 
+way - echo $(cat data.txt) | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+passwd - JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+*Level 13*
+passwd - wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+way - Since we cannot create new files without root permission, move the file to /tmp folder to work on it. 
+
+		1. next decompressed it using >> xxd -r data.txt compressed_data
+			now the data is in binary form
+
+		2. mv compressed_data compressed_data.gz 
+			decompress the file using >> gzip2 -d compressed_data.gz 
+	
+		3.check >> xxd compressed_data
+			
+		4. since the file contains 'BZ' format inside the first header, convert it to >> mv compressed_data compressed_data.bz2
+			>> bzip2 -d compressed_data.bz2
+		
+		5. check >> xxd compressed_data
+		
+		6. It shows gzip file, repeat the same steps using mv and gzip2.
+		
+		7. now it shows .bin file meaning a 'tar' file. 
+			use>> mv compressed_data compressed_data.tar
+			>> tar -xf compressed_data.tar
+
+		8. keep going it until get a txt file.
+		
+		
+*Level 14* 
+passwd - fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+way - we need to run the following from our own machine since we need permissions for the tasks. 
+	1. scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
+      	#private key is copied
+      	2. reduce the permissions using >> chmod 700 sshkey.private
+      	3. ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+      	4. cat /etc/bandit_pass/bandit14
+
+*Level 15* 
+passwd - jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+way - while inside bandit14 server
+	1. nc localhost 30000 
+	2. submit the password for bandit14 
+	
+*Level 16*
+passwd - JQttfApK4SeyHwDlI9SXGR50qclOAil1
+way - while inside bandit 15 server
+	1. openssl s_client -connect localhost:30001
+	2. submit the password for bandit15
+	
+*Level 17*
+passwd - PRIVATE KEY: 
+	-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+
+way - scan using nmap to find the open ssl connections
+	1. nmap -sV localhost -p 31000-32000
+	2. openssl s_client -connect localhost:[ssl ports]
+	3. submit the password.
+	
+
+*Level 18*
+passwd - hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+way - diff passwords.new passwords.old 
+
+*Level 19*
+passwd - awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+way - ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+
+*Level 20*
+passwd - VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+way - ./bandit20-do cat /etc/bandit_pass/bandit20
+
+*Level 21*
+passwd - 
+way - 
+
+
+
