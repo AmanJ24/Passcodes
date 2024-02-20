@@ -162,17 +162,17 @@ way - Check what instructions are running in the background
 	5. cat /tmp/[the code mentioned]
 	
 *Level 23*
-passwd - VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
-way -  Same as Above:
-	1. cd /etc/cron.d
+passwd - QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+way - Do same as above: 
+	1. cd etc/cron.d
 	2. cat cronjob_bandit23
-	3. cd /tmp/bandit23
-	4. cat password23
+	3. /usr/bin/cronjob_bandit23.sh
+	4. echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+	5. cat /tmp/[HASH_CODE]
 	
 *Level 24*
 passwd - 
 way - 
-
 
 
 
