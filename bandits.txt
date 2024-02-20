@@ -147,7 +147,42 @@ passwd - VxCazJaVykI6W36BkBU0mJTCM8rR95XT
 way - ./bandit20-do cat /etc/bandit_pass/bandit20
 
 *Level 21*
+passwd - NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+way - Create a temp server to use the server to send the password via setuid file. 
+	1. echo -n [OLD_PASSWORD] | nc -l -p 1234 &
+	2. ./suconnect 1234
+	
+*Level 22*
+passwd - WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+way - Check what instructions are running in the background
+	1. cd /etc/cron.d
+	2. ls -l >> to see what user it is running as
+	3. cat cronjob_bandit22
+	4. /usr/bin/cronjob_bandit22.sh
+	5. cat /tmp/[the code mentioned]
+	
+*Level 23*
+passwd - VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+way -  Same as Above:
+	1. cd /etc/cron.d
+	2. cat cronjob_bandit23
+	3. cd /tmp/bandit23
+	4. cat password23
+	
+*Level 24*
 passwd - 
-way -
+way - 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
