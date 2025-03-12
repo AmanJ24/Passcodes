@@ -1,0 +1,13 @@
+krypton.labs.overthewire.org 
+port 2231
+
+
+##Level 0: 
+
+Method: echo "S1JZUFRPTklTR1JFQVQ=" | base64 --decode
+Password: KRYPTONISGREAT
+
+##Level 0-1:
+
+Method: 
+Password: 

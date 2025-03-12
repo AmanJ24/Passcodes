@@ -3,103 +3,98 @@ port - 2220
 bandit0
 
 
-*Level 1*  
-WAY - Using ls
-passwd - NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
 
-*level 2* 
-WAY - Using cat ./-
-passwd - rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+#Level 0-1: 
 
-*Level 3*
-WAY - using "" for spaced names
-passwd - aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+Method: ls readme
+Password: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 
-*Level 4*
-Way - using ls -a for hidden files
-passwd - 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 
-*Level 5*
-Way - just open and look for the readable one
-passwd - lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+#Level 1-2: 
 
-*Level 6*
-WAY - use ls -la [Folder_name] and check for the specified size 
-passwd - P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+Method: cat ./-
+Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
-*Level 7*
-Way - find / -user bandit7 -group bandit6 -size 33c 2>&1 | grep -F -v Permission | grep -F -v directory
-Passwd - z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+#Level 2-3:
 
-*Level 8*
-way - grep -w "millionth" data.txt
-passwd - TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+Method: cat spaces\ in\ this\ filename
+Password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 
-*Level 9* 
-way - sort data.txt | uniq -u
-passwd - EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+#Level 3-4: 
 
-*Level 10*
-way - cat data.txt | strings | grep ^=
-passwd - G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+Method: cat inhere/...Hinding-From-You
+Password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 
-*Level 11*
-way - base64 --decode data.txt 
-passwd - 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+#Level 4-5: 
 
-*Level 12* 
-way - echo $(cat data.txt) | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-passwd - JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+Method: cat inhere/-file-0[0-9] keep checking 
+Password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 
-*Level 13*
-passwd - wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
-way - Since we cannot create new files without root permission, move the file to /tmp folder to work on it. 
+#Level 5-6: 
 
-		1. next decompressed it using >> xxd -r data.txt compressed_data
-			now the data is in binary form
+Method: find . -type f -size 1033c
+Password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
-		2. mv compressed_data compressed_data.gz 
-			decompress the file using >> gzip2 -d compressed_data.gz 
-	
-		3.check >> xxd compressed_data
-			
-		4. since the file contains 'BZ' format inside the first header, convert it to >> mv compressed_data compressed_data.bz2
-			>> bzip2 -d compressed_data.bz2
-		
-		5. check >> xxd compressed_data
-		
-		6. It shows gzip file, repeat the same steps using mv and gzip2.
-		
-		7. now it shows .bin file meaning a 'tar' file. 
-			use>> mv compressed_data compressed_data.tar
-			>> tar -xf compressed_data.tar
+#Level 6-7: 
 
-		8. keep going it until get a txt file.
-		
-		
-*Level 14* 
-passwd - fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
-way - we need to run the following from our own machine since we need permissions for the tasks. 
-	1. scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
-      	#private key is copied
-      	2. reduce the permissions using >> chmod 700 sshkey.private
-      	3. ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
-      	4. cat /etc/bandit_pass/bandit14
+Method: find / -user bandit7 -group bandit6 -size 33c 2>&1 | grep -F -v Permission | grep -F -v directory
+Password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj 
 
-*Level 15* 
-passwd - jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
-way - while inside bandit14 server
-	1. nc localhost 30000 
-	2. submit the password for bandit14 
-	
-*Level 16*
-passwd - JQttfApK4SeyHwDlI9SXGR50qclOAil1
-way - while inside bandit 15 server
-	1. openssl s_client -connect localhost:30001
-	2. submit the password for bandit15
-	
-*Level 17*
-passwd - PRIVATE KEY: 
+#Level 7-8: 
+
+Method: cat data.txt | grep "millionth"
+Password: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc 
+
+
+#Level 8-9: 
+
+Method: cat data.txt | sort | uniq -u 
+Password: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+#Level 9-10:
+
+Method: cat data.txt | strings | grep "="
+Password: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+#Level 10-11: 
+
+Method: cat data.txt | base64 --decode
+Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+#Level 11-12:
+
+Method: cat data.txt | tr 'a-z' 'n-za-m' | tr 'A-Z' 'N-ZA-M'
+Password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+#Level 12-13: 
+
+Method: try de-encrypt using different tools and checking using file 
+Password: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+ 
+#Level 13-14:
+
+Method: ssh bandit14@localhost -i sshprivate.key -p 2220 
+Password: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+#Level 14-15: 
+
+Method: nc localhost 30000 
+	and submit the password
+Password: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+#Level 15-16: 
+
+Method: openssl s_client -connect localhost:30001
+Password: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx 
+
+#Level 16-17: 
+
+Method: nmap -sV localhost -p31000-32000
+	openssl s_client -connect localhost:31790 -quiet
+	submit the password
+
+Password:
+	PRIVATE KEY: 
 	-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
 imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
@@ -128,61 +123,51 @@ dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
 
-way - scan using nmap to find the open ssl connections
-	1. nmap -sV localhost -p 31000-32000
-	2. openssl s_client -connect localhost:[ssl ports]
-	3. submit the password.
-	
 
-*Level 18*
-passwd - hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
-way - diff passwords.new passwords.old 
+#Level 17-18:
 
-*Level 19*
-passwd - awhqfNnAbc1naukrpqDYcF95h7HoMTrC
-way - ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+Method: diff passwords.new passwords.old
+	preceeded by < is from the first file
+Password: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
 
-*Level 20*
-passwd - VxCazJaVykI6W36BkBU0mJTCM8rR95XT
-way - ./bandit20-do cat /etc/bandit_pass/bandit20
+#Level 18-19:
 
-*Level 21*
-passwd - NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
-way - Create a temp server to use the server to send the password via setuid file. 
-	1. echo -n [OLD_PASSWORD] | nc -l -p 1234 &
-	2. ./suconnect 1234
-	
-*Level 22*
-passwd - WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
-way - Check what instructions are running in the background
-	1. cd /etc/cron.d
-	2. ls -l >> to see what user it is running as
+Method: ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+Password:cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 
+
+#Level 19-20:
+
+Method: ./bandit20-do cat /etc/bandit_pass/bandit20
+Password: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+#Level 20-21:
+
+Method: echo -n [OLD_PASSWORD] | nc -l -p 1234 &
+	./suconnect 1234
+Password: EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+
+#Level 21-22:
+
+Method: 1. cd /etc/cron.d
+	2. ls -l >> see what the user is running it as 
 	3. cat cronjob_bandit22
 	4. /usr/bin/cronjob_bandit22.sh
-	5. cat /tmp/[the code mentioned]
-	
-*Level 23*
-passwd - QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
-way - Do same as above: 
-	1. cd etc/cron.d
+	5. cat /tmp/[code mentioned]
+Password: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
+
+
+#Level 22-23:
+
+Method: SAME AS ABOVE: 
+	1. cd /etc/cron.d
 	2. cat cronjob_bandit23
 	3. /usr/bin/cronjob_bandit23.sh
 	4. echo I am user bandit23 | md5sum | cut -d ' ' -f 1
 	5. cat /tmp/[HASH_CODE]
-	
-*Level 24*
-passwd - 
-way - 
 
+Password: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 
+#Level 23-24: 
 
-
-
-
-
-
-
-
-
-
-
+Method: 
+Password:

@@ -1,0 +1,61 @@
+ssh leviathan$@leviathan.labs.overthewire.org
+port - 2223
+
+
+##Level 0-1:
+
+Method: cat .backup/bookmarks.html | grep "password"
+Password: 3QJ3TgzHDq
+
+##Level 1-2:
+
+Method: strings check, ltract ./check, [check strcmp(value, password)]
+Password: NsN1HwFoyN
+
+##Level 2-3:
+
+Method: make a temp folder
+	echo "anything" > "foo.txt bar.txt"
+	ls -s /etc/leviathan_pass/leviathan3 bar.txt
+	~/printfile "too.txt bar.txt"
+Password: f0n8h2iWLP
+
+##Level 3-4:
+
+Method: ltrace ./level3 
+	check strcmp(value, password)
+Password: WG1egElCvO
+
+##Level 4-5:
+
+Method: make a temp folder and use python: 
+	./bin > /tmp/folder_name/nums.txt
+
+	Python: 
+		nums = open("nums.txt", "r").read().split()
+
+		for i in range(len(nums)):
+        		nums[i] = chr(int(nums[i],2))
+		password = ""
+		print(password.join(nums))
+Password: 0dyxT7F4QD
+
+##Level 5-6:
+
+Method: ./leviathan5
+	echo "foo" > /tmp/file.log
+	./leviathan5
+	ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+	./leviathan5
+Password: szo7HDB88w
+
+
+##Level 6-7: 
+
+Method: for i in {1000..10000}; do echo "trying $i"; ./leviathan6 $i; | grep -v "Wrong"; sleep 0.005; done
+Password: qEs5Io5yM8
+
+
+
+
+

@@ -1,0 +1,63 @@
+#Level 0: 
+
+Method: VIEW PAGE SOURCE
+Password: 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq
+
+#Level 0-1:
+
+Method: Developer tools > View Page Source
+Password: TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
+
+#Level 1-2:
+
+Method: <url>/files/user.txt
+Password: 3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+
+#Level 2-3:
+
+Method: <url>/robots.txt > /s3cr3t/
+Password: QryZXc2e0zahULdHrtHxzyYkj59kUxLQ 
+
+#Level 3-4:
+
+Method: Use burpsuite to see the HTTP request and make your own request.
+Password: 0n35PkggAPm2zbEpOU802c0x0Msn1ToK
+
+#Level 4-5:
+
+Method: Check cookies while checking GET request and change it from 0 to 1.
+Password:0RoJwHdSKWFTYR5WuiAewauSuNaBXned
+
+#Level 5-6:
+
+Method: Check source code and head to the directory mentioned
+Password:bmg8SvU1LizuWjx3y7xkNERkHxGre0GS 
+
+#Level 6-7: 
+
+Method: Check page source and then <url>/index.php?page=<path>
+Password: xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q  
+
+#Level 7-8:
+
+Method: VIEW SOURCE CODE
+	<?php
+	echo base64_decode(strrev(hex2bin(('3d3d516343746d4d6d6c315669563362'))));
+?>
+Password: ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t 
+
+#Level 8-9:
+
+Method: 1. xxxx dictionary.txt | find / -name *natas*;
+	2. xxxx dictionary.txt | cat /etc/natas_webpass/natas10
+Password: t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
+
+#Level 9-10:
+
+Method: . /etc/natas_webpass/natas11
+Password: UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk 
+
+#Level 10-11:
+
+Method: 
+Password: 
