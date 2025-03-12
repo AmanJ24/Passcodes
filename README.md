@@ -32,7 +32,7 @@ Bandit is aimed at absolute beginners. It teaches the basics of many common Unix
 - Shell scripting
 - Network protocols (SSH, HTTP, etc.)
 
-[Bandit Solutions →](./bandit)
+[Bandit Solutions →](./bandits.txt)
 
 ### Krypton
 
@@ -44,7 +44,7 @@ Krypton focuses on teaching cryptography principles through increasingly challen
 - Frequency analysis
 - Cryptanalysis methods
 
-[Krypton Solutions →](./krypton)
+[Krypton Solutions →](./krypton.txt)
 
 ### Leviathan
 
@@ -55,7 +55,7 @@ Leviathan is a small wargame with few levels but requires careful reverse engine
 - Executable permissions
 - Linux security concepts
 
-[Leviathan Solutions →](./leviathan)
+[Leviathan Solutions →](./leviathan.txt)
 
 ### Natas
 
@@ -68,7 +68,7 @@ Natas teaches the basics of serverside web security. Each level contains a vulne
 - File inclusion vulnerabilities
 - Cross-site scripting (XSS)
 
-[Natas Solutions →](./natas)
+[Natas Solutions →](./natas.txt)
 
 ## Setup & Usage 🛠️
 
@@ -76,13 +76,13 @@ To use this repository effectively:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/overthewire-solutions.git
-   cd overthewire-solutions
+   git clone https://github.com/AmanJ24/Passcodes.git
+   cd Passcodes
    ```
 
-2. Navigate to the specific wargame directory you're interested in:
+2. Navigate to the specific wargame file you're interested in:
    ```bash
-   cd bandit
+   cat bandit
    ```
 
 3. Read the level solutions in numerical order. Each level typically includes:
