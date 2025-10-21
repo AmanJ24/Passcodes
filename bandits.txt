@@ -201,6 +201,25 @@ Password: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 
 #Level 26-27:
 
-Method:
+Method: Reduce the size of the terminal
+        vv
+        vim
+        :set shell=/bin/bash
+        :shell
+        ./bandit27_do cat /etc/bandit_pass/bandit27
+
+Password: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+
+#Level 27-28:
+
+Method: cd $(mktemp -d)
+        git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo
+        cat repo/README
+
+Password: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
+
+#Level 28-29:
+
+Method: 
 
 Password:
