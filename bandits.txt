@@ -182,5 +182,25 @@ Password: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 
 #Level 24-25:
 
-Method: 
-Password: 
+Method: seq -f "gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 %4g" 1000 9999 | 
+    socat STDIO TCP4:localhost:30002 |
+    grep -v Wrong!
+
+Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 
+
+#Level 25-26:
+
+Method: cat bandit26.sshkey
+        Copy the contents and paste in own machine with 700 permissions 
+        reduce the size of the terminal 
+        while in more command use vv
+        vim
+        :e /etc/bandit_pass/bandit26
+
+Password: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
+
+#Level 26-27:
+
+Method:
+
+Password:
