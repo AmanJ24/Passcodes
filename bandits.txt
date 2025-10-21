@@ -262,6 +262,7 @@ Password: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
 
 #Level 32-33:
 
-Method:
+Method: $0
 
-Password: 
+Password: tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0 
+
