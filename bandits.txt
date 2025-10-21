@@ -220,6 +220,16 @@ Password: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 
 #Level 28-29:
 
-Method: 
+Method: cd $(mktemp -d)
+        git clone ssh://bandit28-git@bandit.labs.overthewire.org:2220/home/bandit28-git/repo
+        cd repo
+        git logs -p README.md
+
+Password: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
+
+#Level 29-30:
+
+Method:
 
 Password:
+
