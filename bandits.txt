@@ -223,13 +223,45 @@ Password: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 Method: cd $(mktemp -d)
         git clone ssh://bandit28-git@bandit.labs.overthewire.org:2220/home/bandit28-git/repo
         cd repo
-        git logs -p README.md
+        git log -p README.md
 
 Password: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
 
 #Level 29-30:
 
+Method: cd $(mktemp -d)
+        git clone ssh://bandit30-git@bandit.labs.overthewire.org:2220/home/bandit30-git/repo
+        cd repo
+        git branch -a
+        git log -p origin/dev
+
+Password: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
+
+#Level 30-31:
+
+Method: cd $(mktemp -d)
+        git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo
+        cd repo
+        git tag -l
+        git show secret
+
+Password: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
+
+#Level 31-32:
+
+Method: cd $(mktemp -d)
+        git clone ssh://bandit32-git@bandit.labs.overthewire.org:2220/home/bandit32-git/repo
+        cd repo
+        touch key.txt
+        echo "May I come in?" > key.txt
+        git add -f key.txt
+        git commit -m "Something"
+        git push origin master
+
+Password: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
+
+#Level 32-33:
+
 Method:
 
-Password:
-
+Password: 
