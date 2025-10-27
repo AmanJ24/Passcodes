@@ -5,9 +5,28 @@ port 2231
 ##Level 0: 
 
 Method: echo "S1JZUFRPTklTR1JFQVQ=" | base64 --decode
+
 Password: KRYPTONISGREAT
+
 
 ##Level 0-1:
 
-Method: 
-Password: 
+Method: rot13 rot13 "YRIRY GJB CNFFJBEQ EBGGRA"
+
+Password: ROTTEN
+
+
+#Level 1-2:
+
+Method: cat krypton3 | tr 'A-Za-z' 'O-ZA-No-za-n'
+                  OR
+    Use online Caeser Cipher Brute Forcer
+
+Password: CAESARISEASY 
+
+
+#Level 2-3:
+
+Method:
+
+Password:

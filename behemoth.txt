@@ -1,0 +1,17 @@
+behemoth.labs.overthewire.org 
+port - 2221
+behemoth0
+
+
+#Level 0-1:
+
+Method: ltrace ./behemoth0
+
+Password: 8YpAQCAuKf
+
+
+#Level 1-2:
+
+Method: 
+
+Password:
